@@ -12,13 +12,13 @@ curses.noecho()
 curses.curs_set(0)
 screen.keypad(1)
 
+screen.clear()
+screen.addstr("Ready to accept up or down to play sounds or q to quit!")
+
 while True:
 	event = screen.getch()
 	if event == ord('q'):
 		break
-	elif event == ord('p'):
-		screen.clear()
-		screen.addstr("You pressed p")
 	elif event == curses.KEY_UP:
 		screen.clear()
 		screen.addstr("You pressed up")
@@ -29,6 +29,6 @@ while True:
 		down.play()
 	else:
 		screen.clear()
-		screen.addstr("You didn't press p")
+		screen.addstr("You didn't press up, down or q to quit.")
 
 curses.endwin()
